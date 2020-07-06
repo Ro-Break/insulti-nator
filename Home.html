@@ -9,42 +9,43 @@
         background-color: rgb(44, 48, 53);
         height: auto;
         width: auto;
+        margin: auto;
+
       }
 
       footer {
-        background-color: rgb(58, 68, 79);
+        background-color: rgb(49, 55, 63);
+        bottom: auto;
       }
 
       img.d {
         display: inline;
+      }
+      button {
+        height: auto;
+        width: auto;
+        text-align: center;
       }
 
     </style>
 
   </head>
   <body>
-    <div style="font-size:10vw" filter="invert(1);" >
-
-
-    </div>
-    <p id="Output"></p>
+      <p id="Output"></p>
     <div>
-
-
       <input type="text" id="Commando" value="Commandi da inserire"><br>
-      <button type="button" name="Submit" onclick="type()"></button>
+      <button type="button" name="Submit" onclick="Type()">Submit Command</button>
 
     </div>
 
     <footer>
       <img class="d" src="discord-512.webp"title="Server Discord" width="48" height="48">
     </footer>
-
+    
     <script>
-
       let Vel = 100;
 
-      function type() {
+      function Type() {
         var T = toString(document.getElementById(`Commando`).innerHTML);
         for (i = 0 ; i < T.length ; i++) {
           document.getElementById("Output").innerHTML += Text.charAt(i);
@@ -53,5 +54,7 @@
       }
 
     </script>
-  </body>
+  </body> 
+
+
 </html>
