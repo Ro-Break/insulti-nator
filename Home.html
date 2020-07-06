@@ -35,7 +35,7 @@
       <p id="Output"></p>
     <div>
       <input type="text" id="Commando" name="Commando" value="Commandi da inserire"><br>
-      <button type="button" name="Submit" onclick="type(document.getElementById(`Commando`).innerHTML)"></button>
+      <button type="button" name="Submit" onclick="type()"></button>
     </div>
     <footer>
       <img class="d" src="discord-512.webp"title="Server Discord" width="48" height="48">
@@ -43,8 +43,8 @@
     <script scr="Type.js">
       let Vel = 100;
 
-      function type(Text) {
-        var T = toString(Text);
+      function type() {
+        var T = toString(document.getElementById(`Commando`).innerHTML);
         for (i = 0 ; i < T.length ; i++) {
           document.getElementById("Output").innerHTML += Text.charAt(i);
           setTimeout(type, Vel)
