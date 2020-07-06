@@ -31,28 +31,37 @@
 
   </head>
   <body>
+
+    <div width="auto" height="auto">
       <p id="Output"></p>
-    <div>
       <input type="text" id="Commando" value="Commandi da inserire"><br>
-      <button type="button" name="Submit" onclick="Type()">Submit Command</button>
+      <button onclick="Type()" type="button" name="Submit" >Submit Command</button>
 
     </div>
 
     <footer>
       <img class="d" src="discord-512.webp"title="Server Discord" width="48" height="48">
     </footer>
-    
-    <script>
-      let Vel = 100;
 
-      function Type() {
-        var T = toString(document.getElementById(`Commando`).innerHTML);
-        for (i = 0 ; i < T.length ; i++) {
-          document.getElementById("Output").innerHTML += Text.charAt(i);
-          setTimeout(type, Vel)
+    <script>
+      var i = 0;
+      var txt;
+      var speed = 50; 
+
+      function typing() {
+
+        txt = document.getElementById(`Commando`).value; 
+        if (i < txt.length) {
+          document.getElementById("Output").innerHTML += txt.charAt(i);
+          i++;
+          setTimeout(typing, speed);
         }
       }
 
+      function Type() {
+          document.getElementById("Output").innerHTML = "";
+        typing();
+      }
     </script>
   </body> 
 
