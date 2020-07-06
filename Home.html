@@ -27,33 +27,31 @@
 
 
     </div>
-
-    <div style="font-size:7" filter="invert(1);" >
-      Width Cippi
-
-    </div>
+    <p id="Output"></p>
     <div>
-      <input type="text" id="Commando" name="Commando" value="Commandi da inserire"><br>
+
+
+      <input type="text" id="Commando" value="Commandi da inserire"><br>
       <button type="button" name="Submit" onclick="type()"></button>
-      <p id="Output"></p>
-      
-      <script>
-
-        let Vel = 100;
-
-        function type() {
-          var T = toString(document.getElementById(`Commando`).innerHTML);
-          for (i = 0 ; i < T.length ; i++) {
-            document.getElementById("Output").innerHTML += Text.charAt(i);
-            setTimeout(type, Vel)
-          }
-        }
-
-      </script>
 
     </div>
+
     <footer>
       <img class="d" src="discord-512.webp"title="Server Discord" width="48" height="48">
     </footer>
+
+    <script>
+
+      let Vel = 100;
+
+      function type() {
+        var T = toString(document.getElementById(`Commando`).innerHTML);
+        for (i = 0 ; i < T.length ; i++) {
+          document.getElementById("Output").innerHTML += Text.charAt(i);
+          setTimeout(type, Vel)
+        }
+      }
+
+    </script>
   </body>
 </html>
