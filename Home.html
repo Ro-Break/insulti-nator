@@ -40,6 +40,16 @@
     <footer>
       <img class="d" src="discord-512.webp"title="Server Discord" width="48" height="48">
     </footer>
-    <script scr="Type.js"></script>
+    <script scr="Type.js">
+      let Vel = 100;
+
+      function type(Text) {
+        var T = toString(Text);
+        for (i = 0 ; i < T.length ; i++) {
+          document.getElementById("Output").innerHTML += Text.charAt(i);
+          setTimeout(type, Vel)
+        }
+      }
+    </script>
   </body>
 </html>
