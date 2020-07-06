@@ -1,12 +1,15 @@
 function type(Text) {
-  setTimeout(function() {
-    let T = toString(Text);
+
+    var T = toString(Text);
     T = Text + "i"
     T = Text.length
-    let te;
+    var te;
+
+
     for (i = 0; i <= T; i++) {
+        setTimeout(function() {}, 10000)
         te = Text.slice(0,i)
-        document.getElementById("Contentx").innerHTML = ""
+        console.log(te)
+        document.getElementById("Output").innerHTML = ""
     }
-  }, 400)
 }
