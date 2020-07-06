@@ -1,6 +1,6 @@
 function type(Text) {
   setTimeout(function() {
-    let T = toString(Text)
+    let T = toString(Text);
     T = Text + "i"
     T = Text.length
     let te;

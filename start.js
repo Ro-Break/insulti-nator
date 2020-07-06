@@ -1,16 +1,4 @@
-
-
-
-
-
-
-const nin = [
-    "brutto stronzo",
-    "gay",
-    "tu sei quello gay, io sono cazzo perfetto!",
-    "ma vaffanculo no e?",
-
-];
+const msg = require(`Type.js`)
 
 const insulti = {
     lol : [
@@ -71,58 +59,6 @@ const insulti = {
     ]
 };
 
-const pam = [
-    "gay",
-    "pedofilo",
-    "un cazzo di trans",
-    "ritardato",
-    "molto autistico"
-];
-
-const pet = [
-    "un stronzo",
-    "un coglone",
-    "un gay",
-    "un troione"
-];
-
-let cooldownsolitudine = false ;
-const solitudine = [
-    "<@698849524793344040>", //jace
-    "<@693148274982387713>", //sky
-    "<@218469596577923083>", //no
-    "<@706188824253825135>", //armus
-    "<@724984172527091792>", //chiara
-    "<@724741611438866472>", //desyyyyyyyyyyyyyy
-    "<@596711519232983080>", //pter
-    "<@409086631291912193>", //mega nut
-    "<@315468396860801030>", //pam
-    "<@689097523956285463>", //liam
-    "<@218469596577923083>", //cute
-];
-
-
-
-function sleep(milliseconds) {
-    var start = new Date().getTime();
-    for (var i = 0; i < 1e7; i++) {
-      if ((new Date().getTime() - start) > milliseconds){
-        break;
-      };
-    };
-  };
-
-
-client.on('ready', () => {
-    console.log("%cBot online! Entrato come ${client.user.tag}!", "color: DodgerBlue;");
-
-    client.user.setPresence({
-    });
-
-});
-
-// Create an event listener for messages
-client.on('message', msg => {
 
     /*
     if (msg.author.bot) {
@@ -152,18 +88,15 @@ client.on('message', msg => {
 
             break;
 
-        case "<@!461108311484530688> sei molto gay":
-        case "<@!461108311484530688> ti odio":
-        case "<@!461108311484530688> sei molto gay":
-        case "<@!461108311484530688> gay":
-        case "<@!461108311484530688> sei gay":
+        case "ti odio":
+        case "sei molto gay":
         case "sei gay":
         case "gay":
-        case " sei gay":
-        case " gay":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
+        case "sei gay":
+        case "gay":
+
             let npar = Math.floor(Math.random() * (nin.length));
-            msg.reply(nin[npar]);
+            msg.type(nin[npar]);
             break;
 
         case "cosa sono":
@@ -172,7 +105,7 @@ client.on('message', msg => {
         case "sono?":
             //il perche il mio bot e cosi bello
 
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
+
             let gggg = Math.random() * 100;
 
             console.log("\n" + msg.author.username + " la sua rarita era " + gggg + " che e uguale a ")
@@ -183,19 +116,19 @@ client.on('message', msg => {
 
                 let par = Math.floor(Math.random() * insulti.lol.length);
                 console.log("lol: " + par + "\n");
-                msg.reply(insulti.lol[par]);
+                msg.type(insulti.lol[par]);
 
             } else if (gggg >= 45 && gggg <= 85) {
 
                 let par = Math.floor(Math.random() * insulti.comune.length);
                 console.log("comune: " + par + "\n");
-                msg.reply(insulti.comune[par]);
+                msg.type(insulti.comune[par]);
 
             } else if (gggg >= 85 && gggg <= 99.99) {
 
                 let par = Math.floor(Math.random() * insulti.raro.length);
                 console.log("raro: " + par + "\n");
-                msg.reply(insulti.raro[par]);
+                msg.type(insulti.raro[par]);
 
 
 
@@ -203,50 +136,9 @@ client.on('message', msg => {
 
 		        let par = Math.floor(Math.random() * insulti.superspecial.length);
                 console.log("comune: " + par + "\n");
-                msg.reply(insulti.superspecial[par]);
+                msg.type(insulti.superspecial[par]);
 
             };
-            break;
-
-        case "nat e":
-        case "nat e?":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
-            msg.channel.send('senza cervello');
-            break;
-
-        case "armus e":
-        case "armus e?":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
-            msg.channel.send('molto stronzo');
-            break;
-
-        case "pam e gay":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
-            msg.channel.send('si hai molta ragione');
-            break;
-
-        case "pam e pedofilo":
-        case "pam e pedo":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
-            msg.channel.send('si hai molta ragione');
-            break;
-
-        case "e nat":
-        case "e nat?":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
-            msg.channel.send('senza cervelo? si');
-            break;
-
-        case "e armus":
-        case "e armus?":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
-            msg.channel.send('stronzo? si, e anche tanto');
-            break;
-
-        case "sky e?":
-        case "sky e":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
-            msg.channel.send('una vittima di pam');
             break;
 
         case "voglio una corda":
@@ -257,104 +149,18 @@ client.on('message', msg => {
         case "dove la corda":
         case "dovè la corda?":
         case "dove la corda?":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
 
-            msg.channel.startTyping(1);
-            msg.reply("ce l'ho io! https://www.amazon.it/dp/B07Q2WQRBJ/ref=cm_sw_r_tw_dp_U_x_vru8Eb4WVZBMZ");
-            msg.channel.stopTyping(true);
-            break;
-
-        case "more":
-        case "MORE":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
-
-            msg.reply("se ci tieni al bot e vuoi piu insulti che possa dire, le puoiinviare a questo link https://forms.gle/AERxPwL1yMowaUxr6");
-            break;
-
-        case "pam e":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
-
-            let pamr = Math.floor(Math.random() * (pam.length));
-            msg.channel.send(pam[pamr]);
-            break;
-
-        case "cosa fa Pam con Sky":
-        case "cosa fa Pam con Sky?":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
-            msg.reply("sesso molto caldo brutto pedofilo");
-            break;
-
-        case "piter e?":
-        case "piter e ":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n");
-            let petr = Math.floor(Math.random() * (nap.length));
-            msg.reply(pet[petr]);
-            break;
-
-        case "pam e di?":
-        case "pam e di?":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n")
-            msg.channel.send("pam e lo schiavo di <@218469596577923083> .")
-            break;
-
-
-        case "ship":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n")
-
-            if (cooldownsolitudine) {
-                msg.reply("il commando e in cooldown aspe ancora un po spammer di merda");
-            } else {
-
-                while (true) {
-                    let solitudiner1 = Math.floor(Math.random() * (solitudine.length));
-                    let solitudiner2 = Math.floor(Math.random() * (solitudine.length));
-                    let s1 = solitudine[solitudiner1];
-                    let s2 = solitudine[solitudiner2];
-
-                    if (msg.author.id == ("693148274982387713")) {
-                        msg.channel.send("<@693148274982387713> x <@315468396860801030> tanti auguri per loro : )");
-                        break;
-                    } else if ((s1 == "<@698849524793344040>" && s2 == "<@315468396860801030>") || (s2 == "<@315468396860801030>" && s1 == "<@698849524793344040>")) {
-
-                    } else if (msg.author.id == ("724741611438866472") || msg.author.id == ("409086631291912193")) {
-                        msg.channel.send("<@724741611438866472> x <@409086631291912193> tanti auguri per loro : )");
-                        break;
-                    } else if ((s1 == "<@315468396860801030>" || s2 == "<@315468396860801030>" ) || (s1 == "<@693148274982387713>" || s2 == "<@693148274982387713>")) {
-                        msg.channel.send("<@693148274982387713> x <@315468396860801030> tanti auguri per loro : )");
-                        break
-                    } else {
-                        if (s1 !== s2) {
-                            msg.channel.send(s1 + " x " + s2 + " tanti auguri per loro : )");
-                            break;
-                        };
-                    };
-
-
-
-                };
-
-                cooldownsolitudine = true;
-                sleep(4500);
-                cooldownsolitudine = false;
-            };
-
+            msg.type("ce l'ho io! https://www.amazon.it/dp/B07Q2WQRBJ/ref=cm_sw_r_tw_dp_U_x_vru8Eb4WVZBMZ");
             break;
 
         case "origini":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n")
+
             msg.channel.send("non e spam, sei tu che mi hai chiesto le mie origini https://discord.gg/Z85vVC8");
             break;
 
         case "dio porco":
-            console.log("\n"+ msg.username + ": " + msg.content + "\n")
-            msg.channel.send("concordo con te mio amico blasfemmo");
-            break;
 
-        case "invito":
-        case "invite":
-            msg.channel.send("tieni https://discord.com/oauth2/authorize?client_id=461108311484530688&permissions=8&scope=bot")
-            sleep(1000)
-            msg.channel.send("voglio essere ovunque :D");
+            msg.channel.send("concordo con te mio amico blasfemmo");
             break;
 
         case "info":
