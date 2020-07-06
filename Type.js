@@ -1,15 +1,9 @@
+let Vel = 100;
+
 function type(Text) {
-
     var T = toString(Text);
-    T = Text + "i"
-    T = Text.length
-    var te;
-
-
-    for (i = 0; i <= T; i++) {
-        setTimeout(function() {}, 10000)
-        te = Text.slice(0,i)
-        console.log(te)
-        document.getElementById("Output").innerHTML = ""
+    for (i = 0 ; i < T.length ; i++) {
+        document.getElementById("Output").innerHTML += Text.charAt(i);
+        setTimeout(type, Vel)
     }
 }
